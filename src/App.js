@@ -26,7 +26,7 @@ function App() {
       alert("please enter the student name");
     }else{
       alert("welcome "+student+" !");
-    }
+    } 
     
    }
 
