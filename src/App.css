@@ -36,3 +36,181 @@
     transform: rotate(360deg);
   }
 }
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #0f172a; /* Deep dark slate background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main Container Card */
+.App {
+  width: 100%;
+  max-width: 500px;
+}
+
+.App-header {
+  background: #1e293b; /* Darkened card body */
+  padding: 35px 25px;
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Main Dashboard Title */
+h1:first-of-type {
+  font-size: 1.8rem;
+  color: #ffffff; 
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 3px solid #334155;
+  padding-bottom: 12px;
+}
+
+/* --- Section Title Highlights --- */
+
+/* 1. useState Task Heading (Bright Emerald Green) */
+h2:nth-of-type(1) {
+  background-color: #10b981; 
+  color: #ffffff;            
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+/* 2. useMemo Task Heading (Soft Pastel Purple/Pink from your screenshot) */
+h2:nth-of-type(2) {
+  background-color: #e9d5ff; 
+  color: #6b21a8;            
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(233, 213, 255, 0.2);
+}
+
+/* 3. useCallback Task Heading */
+h1:nth-of-type(2) {
+  color: #ffffff;            
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+/* Subheadings / Labels */
+h3 {
+  font-size: 1.05rem;
+  color: #94a3b8; 
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+/* Form Inputs */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border: 2px solid #10b981; /* Matching your green highlight ring */
+  background-color: #0f172a;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.4);
+}
+
+/* Universal Button Base Styles */
+button {
+  border: none;
+  padding: 12px 20px;
+  margin: 6px 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* FIXED: useState Submit Button (Forces Dark Text on White Background) */
+h2:nth-of-type(1) ~ button {
+  background-color: #ffffff;
+  color: #0f172a !important; /* Dark text makes "Submit" visible */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+h2:nth-of-type(1) ~ button:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+/* useMemo Output Button (Matches theme colors) */
+h2:nth-of-type(2) ~ button {
+  background-color: #d8b4fe;
+  color: #581c87;
+}
+h2:nth-of-type(2) ~ button:hover {
+  background-color: #c084fc;
+  transform: translateY(-1px);
+}
+
+/* useCallback Message Buttons */
+h1:nth-of-type(2) ~ button {
+  background-color: #c084fc;
+  color: #581c87;
+}
+h1:nth-of-type(2) ~ button:hover {
+  background-color: #a855f7;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* FIXED: Live Dynamic Welcome Message Display Box */
+.message-display-box {
+  margin-top: 25px;
+  padding: 16px;
+  background-color:white;
+  border: 2px dashed #38bdf8; /* Sky blue border */
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease-out;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+/* High Contrast text color for dark backgrounds */
+.message-display-box p {
+  color: #38bdf8; /* Electric Sky Blue — incredibly visible */
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
